@@ -441,8 +441,8 @@ button {
   display: flex;
   width: 168px;
   height: 88px;
-  transition: color var(--transition-dur-and-func),
-    border var(--transition-dur-and-func);
+  transition: border-color var(--transition-dur-and-func),
+    color var(--transition-dur-and-func);
 
   border: 1px solid var(--customers-link-colour);
   border-radius: 4px;
@@ -576,7 +576,9 @@ button {
   letter-spacing: 0.04em;
 
   transition: color var(--transition-dur-and-func),
-    background-color var(--transition-dur-and-func);
+    background-color var(--transition-dur-and-func),
+    border-color var(--transition-dur-and-func),
+    box-shadow var(--transition-dur-and-func);
 
   color: var(--main-logo-color);
   background-color: var(--button-back-color);
@@ -610,6 +612,7 @@ button {
 
 .portfolio-link {
   display: block;
+  transition: box-shadow var(--transition-dur-and-func);
 }
 
 .portfolio-link.link:hover,
@@ -654,9 +657,7 @@ button {
   font-size: 16px;
   line-height: 1.5;
 
-  padding-top: 40px;
-  padding-left: 32px;
-  padding-right: 32px;
+  padding: 40px 32px;
 
   color: var(--button-back-color);
   background-color: var(--main-logo-color);
@@ -695,14 +696,20 @@ button {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 408px;
-  height: 584px;
+  min-height: 584px;
+  transition: transform var(--transition-dur-and-func);
+
   background-color: var(--modal-color);
+
+  border-radius: 4px;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .close-btn {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 24px;
+  right: 24px;
 
   display: flex;
   justify-content: center;
@@ -713,10 +720,10 @@ button {
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 0;
+  transition: background-color var(--transition-dur-and-func),
+    border var(--transition-dur-and-func);
 
   background-color: var(--border-colour);
-
-  transition: background-color var(--transition-dur-and-func);
 }
 
 .close-modal {
@@ -726,6 +733,7 @@ button {
 
 .close-btn:hover,
 .close-btn:focus {
+  border: none;
   background-color: var(--button-accent-color);
 }
 .close-btn:hover .close-modal,
